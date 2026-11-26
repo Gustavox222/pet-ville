@@ -47,42 +47,21 @@
     window.addEventListener('resize', function () { if (window.innerWidth > 960 && !menu.hidden) setMenu(false); });
   }
 
-  /* ------------------------------------------------------------ vídeo do hero */
-  var video = $('[data-hero-video]');
+  /* ------------------------------------------------------------ botão que pausa as bolhas do hero */
   var vbtn = $('[data-video-toggle]');
   var userPaused = false;
   var bubblesPaused = false;
-  function tryPlay() { if (!video || userPaused) return; var p = video.play(); if (p && p.catch) p.catch(function () {}); }
   function syncBtn() {
     if (!vbtn) return;
-    var paused = userPaused;
-    vbtn.setAttribute('aria-pressed', paused ? 'true' : 'false');
-    vbtn.setAttribute('aria-label', paused ? 'Tocar o vídeo e as bolhas' : 'Pausar o vídeo e as bolhas');
-    $('use', vbtn).setAttribute('href', paused ? '#i-play' : '#i-pause');
+    vbtn.setAttribute('aria-pressed', userPaused ? 'true' : 'false');
+    vbtn.setAttribute('aria-label', userPaused ? 'Soltar as bolhas' : 'Pausar as bolhas');
+    $('use', vbtn).setAttribute('href', userPaused ? '#i-play' : '#i-pause');
   }
-  if (video) {
-    video.muted = true;
-    tryPlay();
-    video.addEventListener('loadeddata', tryPlay);
-    ['touchstart', 'scroll', 'keydown', 'pointerdown'].forEach(function (ev) {
-      window.addEventListener(ev, function once() { tryPlay(); window.removeEventListener(ev, once); }, { passive: true });
-    });
-    document.addEventListener('visibilitychange', function () { if (!document.hidden) tryPlay(); });
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (en) {
-        if (en[0].isIntersecting) { tryPlay(); bubblesPaused = userPaused; } else { video.pause(); bubblesPaused = true; }
-        toggleBubbles();
-      }).observe($('.hero'));
-    }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) { bubblesPaused = en[0].isIntersecting ? userPaused : true; toggleBubbles(); }).observe($('.hero'));
   }
   if (vbtn) {
-    vbtn.addEventListener('click', function () {
-      userPaused = !userPaused;
-      if (userPaused) video.pause(); else tryPlay();
-      bubblesPaused = userPaused;
-      toggleBubbles();
-      syncBtn();
-    });
+    vbtn.addEventListener('click', function () { userPaused = !userPaused; bubblesPaused = userPaused; toggleBubbles(); syncBtn(); });
     syncBtn();
   }
 
@@ -256,7 +235,7 @@
   doc.classList.add('ready');
   var tl = G.timeline({ defaults: { ease: 'power3.out' } });
   tl.from('.nav__in', { y: -30, autoAlpha: 0, duration: 0.7 }, 0)
-    .from(video, { scale: 1.12, duration: 2.2, ease: 'power2.out' }, 0)
+    .fromTo('.hero__img', { scale: 1.12 }, { scale: 1, duration: 2.2, ease: 'power2.out', clearProps: 'transform' }, 0)
     .from('[data-hero-item]:first-child', { y: 16, autoAlpha: 0, duration: 0.6 }, 0.15);
   if (split && split.chars) tl.from(split.chars, { yPercent: 90, autoAlpha: 0, scale: 0.6, duration: 0.7, ease: 'back.out(2.2)', stagger: 0.016 }, 0.25);
   else tl.from(title, { y: 30, autoAlpha: 0, duration: 0.8 }, 0.25);
