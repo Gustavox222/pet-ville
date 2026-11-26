@@ -8,14 +8,16 @@
 <meta name="page-type" content="place">
 <meta name="site-kind" content="other">
 <meta name="page-kind" content="place">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#173f3b">
+<!-- só tema claro: impede o modo escuro automático do navegador (e o Dark Reader) de escurecer o site -->
+<meta name="color-scheme" content="only light">
+<meta name="darkreader-lock">
+<meta name="theme-color" content="#4fa39a">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="PetVille Pet Shop · Banho e tosa com carinho na Vila Ema">
 <meta property="og:description" content="Banho com ozônio, cromoterapia, tosa de raças, hidratação e penteados, sempre com hora marcada. R. Justino Cobra, 35, Vila Ema, São José dos Campos.">
 <meta property="og:url" content="https://gustavox222.github.io/pet-ville/">
-<meta property="og:image" content="https://gustavox222.github.io/pet-ville/share.jpg?v=2">
+<meta property="og:image" content="https://gustavox222.github.io/pet-ville/share.jpg?v=3">
 <link rel="canonical" href="https://gustavox222.github.io/pet-ville/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/logo-square-180.png?v=2" type="image/png">
@@ -24,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Baloo+2:wght@600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/hero-lulu.webp?v=3" imagesrcset="img/hero-lulu-900.webp?v=3 900w, img/hero-lulu.webp?v=3 1600w" imagesizes="100vw">
-<link rel="stylesheet" href="css/style.css?v=4">
+<link rel="stylesheet" href="css/style.css?v=5">
 <script>(function(d){d.classList.add('js','m-enter');if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('reduce');setTimeout(function(){d.classList.add('ready');},3500);})(document.documentElement);</script>
 <script type="application/ld+json">
 {
@@ -32,7 +34,7 @@
   "@type": "PetStore",
   "name": "PetVille Pet Shop",
   "alternateName": "Pet Ville",
-  "image": "https://gustavox222.github.io/pet-ville/share.jpg?v=2",
+  "image": "https://gustavox222.github.io/pet-ville/share.jpg?v=3",
   "logo": "https://gustavox222.github.io/pet-ville/img/logo-square.png",
   "url": "https://gustavox222.github.io/pet-ville/",
   "telephone": "+55-12-98103-6626",
@@ -52,7 +54,7 @@
 <body>
 <!-- PetVille Pet Shop · place · cores da própria logo: verde-água #4fa39a, creme da nuvem #fbf3e8, coral do "PET" #e0574f, pêssego do focinho #f2c3a0
      Baloo 2 (títulos, redonda e fofa) + Quicksand (texto) + Amatic SC (o traço fino e alto do letreiro da logo, só em etiquetas)
-     Tema escuro verde-água (o cliente prefere o visual que o celular mostrava). Hero: foto do lulu da própria loja em tela cheia + borda de nuvem + bolhas de sabão que estouram no toque
+     Fundos creme e verde, iguais no computador e no celular. Hero: foto do lulu da própria loja em tela cheia + borda de nuvem + bolhas de sabão que estouram no toque
      Momentos: (1) a biografia que se colore palavra por palavra; (2) o banho em quatro capítulos com a foto que troca e a luz azul que acende.
      21st-style: bento de serviços com holofote no cursor, faixa corrida de serviços e de elogios, acordeão com mola (Motion). -->
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -69,14 +71,14 @@
   <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path class="v" d="M12 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
   <!-- serviços -->
-  <symbol id="s-banho" viewBox="0 0 48 48"><path d="M6 24h36v5a11 11 0 0 1-11 11H17A11 11 0 0 1 6 29z" fill="#2a625b" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M12 24V11a4.5 4.5 0 0 1 9 0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="27" cy="15" r="3.4" fill="#173f3b" stroke="currentColor" stroke-width="2.2"/><circle cx="35" cy="10" r="2.4" fill="#173f3b" stroke="currentColor" stroke-width="2.2"/><circle cx="34" cy="19" r="2" fill="#173f3b" stroke="currentColor" stroke-width="2"/><path d="M14 40l-2 4M34 40l2 4" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
-  <symbol id="s-ozonio" viewBox="0 0 48 48"><circle cx="20" cy="24" r="12" fill="#2a625b" stroke="currentColor" stroke-width="2.6"/><circle cx="35" cy="13" r="5.5" fill="#173f3b" stroke="currentColor" stroke-width="2.4"/><circle cx="37" cy="33" r="4" fill="#173f3b" stroke="currentColor" stroke-width="2.4"/><text x="20" y="29" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="13" fill="currentColor">O₃</text></symbol>
-  <symbol id="s-maquina" viewBox="0 0 48 48"><rect x="15" y="12" width="18" height="30" rx="8" fill="#2a625b" stroke="currentColor" stroke-width="2.6"/><path d="M13 6h22v6H13z" fill="#173f3b" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M17 6V3M21 6V3M25 6V3M29 6V3M33 6V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="26" r="3" fill="currentColor"/></symbol>
-  <symbol id="s-tesoura" viewBox="0 0 48 48"><circle cx="13" cy="35" r="6" fill="#2a625b" stroke="currentColor" stroke-width="2.6"/><circle cx="35" cy="35" r="6" fill="#2a625b" stroke="currentColor" stroke-width="2.6"/><path d="M17 30L35 6M31 30L13 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
-  <symbol id="s-penteado" viewBox="0 0 48 48"><path d="M24 24l-14-9v18zM24 24l14-9v18z" fill="#f7c9c3" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><circle cx="24" cy="24" r="4.5" fill="#173f3b" stroke="currentColor" stroke-width="2.6"/></symbol>
-  <symbol id="s-hidrata" viewBox="0 0 48 48"><path d="M24 5c7 9 13 16 13 23a13 13 0 0 1-26 0c0-7 6-14 13-23z" fill="#2a625b" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M18 30a6 6 0 0 0 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
-  <symbol id="s-desembolo" viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="12" rx="5" fill="#2a625b" stroke="currentColor" stroke-width="2.6"/><path d="M11 20v18M17 20v18M23 20v18M29 20v18M35 20v18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
-  <symbol id="s-higienica" viewBox="0 0 48 48"><path d="M24 6l14 5v11c0 9-6 16-14 20-8-4-14-11-14-20V11z" fill="#2a625b" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M17 24l5 5 9-10" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="s-banho" viewBox="0 0 48 48"><path d="M6 24h36v5a11 11 0 0 1-11 11H17A11 11 0 0 1 6 29z" fill="#cfece7" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M12 24V11a4.5 4.5 0 0 1 9 0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><circle cx="27" cy="15" r="3.4" fill="#fff" stroke="currentColor" stroke-width="2.2"/><circle cx="35" cy="10" r="2.4" fill="#fff" stroke="currentColor" stroke-width="2.2"/><circle cx="34" cy="19" r="2" fill="#fff" stroke="currentColor" stroke-width="2"/><path d="M14 40l-2 4M34 40l2 4" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="s-ozonio" viewBox="0 0 48 48"><circle cx="20" cy="24" r="12" fill="#cfece7" stroke="currentColor" stroke-width="2.6"/><circle cx="35" cy="13" r="5.5" fill="#fff" stroke="currentColor" stroke-width="2.4"/><circle cx="37" cy="33" r="4" fill="#fff" stroke="currentColor" stroke-width="2.4"/><text x="20" y="29" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="13" fill="currentColor">O₃</text></symbol>
+  <symbol id="s-maquina" viewBox="0 0 48 48"><rect x="15" y="12" width="18" height="30" rx="8" fill="#cfece7" stroke="currentColor" stroke-width="2.6"/><path d="M13 6h22v6H13z" fill="#fff" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M17 6V3M21 6V3M25 6V3M29 6V3M33 6V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="26" r="3" fill="currentColor"/></symbol>
+  <symbol id="s-tesoura" viewBox="0 0 48 48"><circle cx="13" cy="35" r="6" fill="#cfece7" stroke="currentColor" stroke-width="2.6"/><circle cx="35" cy="35" r="6" fill="#cfece7" stroke="currentColor" stroke-width="2.6"/><path d="M17 30L35 6M31 30L13 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="s-penteado" viewBox="0 0 48 48"><path d="M24 24l-14-9v18zM24 24l14-9v18z" fill="#f7c9c3" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><circle cx="24" cy="24" r="4.5" fill="#fff" stroke="currentColor" stroke-width="2.6"/></symbol>
+  <symbol id="s-hidrata" viewBox="0 0 48 48"><path d="M24 5c7 9 13 16 13 23a13 13 0 0 1-26 0c0-7 6-14 13-23z" fill="#cfece7" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M18 30a6 6 0 0 0 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="s-desembolo" viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="12" rx="5" fill="#cfece7" stroke="currentColor" stroke-width="2.6"/><path d="M11 20v18M17 20v18M23 20v18M29 20v18M35 20v18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="s-higienica" viewBox="0 0 48 48"><path d="M24 6l14 5v11c0 9-6 16-14 20-8-4-14-11-14-20V11z" fill="#cfece7" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M17 24l5 5 9-10" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="s-unhas" viewBox="0 0 48 48"><ellipse cx="24" cy="32" rx="10" ry="8.5" fill="#f2c3a0" stroke="currentColor" stroke-width="2.6"/><ellipse cx="11" cy="20" rx="4" ry="5" fill="#f2c3a0" stroke="currentColor" stroke-width="2.4"/><ellipse cx="37" cy="20" rx="4" ry="5" fill="#f2c3a0" stroke="currentColor" stroke-width="2.4"/><ellipse cx="18" cy="11" rx="4" ry="5" fill="#f2c3a0" stroke="currentColor" stroke-width="2.4"/><ellipse cx="30" cy="11" rx="4" ry="5" fill="#f2c3a0" stroke="currentColor" stroke-width="2.4"/></symbol>
 </svg>
 
@@ -523,6 +525,6 @@
 <script src="vendor/ScrollTrigger.min.js?v=2" defer></script>
 <script src="vendor/SplitText.min.js?v=2" defer></script>
 <script src="vendor/motion.js?v=2" defer></script>
-<script src="js/main.js?v=3" defer></script>
+<script src="js/main.js?v=4" defer></script>
 </body>
 </html>

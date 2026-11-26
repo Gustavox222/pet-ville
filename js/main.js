@@ -108,6 +108,8 @@
     chapters.forEach(function (c, k) { c.classList.toggle('is-on', k === i); });
     $$('[data-ch-img]', stage).forEach(function (im) { im.classList.toggle('is-on', +im.getAttribute('data-ch-img') === i); });
     dots.forEach(function (d, k) { d.classList.toggle('is-on', k === i); });
+    // a luz azul é só da cromoterapia: apaga quando a foto troca
+    if (i !== 2) setBlue(false);
   }
   if (chapters.length && 'IntersectionObserver' in window) {
     var chIO = new IntersectionObserver(function (en) {
@@ -115,12 +117,16 @@
     }, { rootMargin: '-48% 0px -48% 0px' });
     chapters.forEach(function (c) { chIO.observe(c); });
   }
+  function setBlue(on) {
+    if (!blueBtn) return;
+    $$('[data-blue-target]').forEach(function (t) { t.classList.toggle('is-blue', on); });
+    blueBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    blueBtn.textContent = on ? 'Apagar a luz azul' : 'Acender a luz azul';
+  }
   if (blueBtn && stage) {
     blueBtn.addEventListener('click', function () {
-      var on = !stage.classList.contains('is-blue');
-      $$('[data-blue-target]').forEach(function (t) { t.classList.toggle('is-blue', on); });
-      blueBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
-      blueBtn.textContent = on ? 'Apagar a luz azul' : 'Acender a luz azul';
+      setChapter(2);
+      setBlue(!stage.classList.contains('is-blue'));
     });
   }
 
